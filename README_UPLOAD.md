@@ -27,12 +27,12 @@ ViT Encoder (Pretrained)
     ↓
 Shared Early Decoder (768→512→256)
     ↓
-    ├──────────────────────┬──────────────────────┐
-    ↓                      ↓                      ↓
+    ├──────────────────────┬
+    ↓                      ↓                      
 Occluded Late          Amodal Late            
 Decoder (256→64)       Decoder (256→64)       
     ↓                      ↓                      
-    ├──────────→ FUSION ←──────────┘
+    ├──────────────────→ FUSION
     ↓                      ↓
 Occluded Mask       Amodal Mask (Fused)
 ```
