@@ -1,10 +1,10 @@
-# ViTA-Seg: Hybrid+Fused Dual-Head Vision Transformer for Amodal Segmentation
+# ViTA-Seg: Vision Transformer for Amodal Segmentation in Robotics
 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch 2.0+](https://img.shields.io/badge/pytorch-2.0+-red.svg)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Official PyTorch implementation of the **Hybrid+Fused Dual-Head architecture** for amodal instance segmentation.
+Official PyTorch implementation of the **ViTA-Seg architecture** for amodal segmentation.
 
 ---
 
