@@ -1,0 +1,107 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# PyTorch
+*.pth
+*.pt
+best-models/
+best-models-*/
+checkpoints/
+runs/
+
+# WandB
+wandb/
+*.wandb
+
+# Training outputs
+visualization_output/
+visualization_output_val/
+outputs/
+
+# Data files (too large for git)
+data/
+datasets/
+ViTASimData/
+*.json
+!configs/*.json
+*.pkl
+!requirements.txt
+
+# Model weights
+*.pth
+*.pt
+*.ckpt
+
+# Images and videos
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp4
+*.avi
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project specific
+model_comparison_differences.txt
+cocoa_filtered_indices.txt
+check_cocoa_categories.py
+extract_cocoa_indices.py
+
+# Temporary files
+*.tmp
+*.bak
+*.orig
+
+# Config with absolute paths (use relative path configs instead)
+config_local.yaml
