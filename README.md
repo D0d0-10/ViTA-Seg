@@ -153,40 +153,6 @@ python test_single_sample_fullres_aligned.py \
     --index 0
 ```
 
-### Compare Two Models
-
-```bash
-python compare_two_models.py \
-    --model1 model_1 \
-    --model2 model_2 \
-    --diff-threshold 0.05
-```
-
-Or with difference range:
-
-```bash
-python compare_two_models.py \
-    --model1 model_1 \
-    --model2 model_2 \
-    --diff-range 0.02 0.05
-```
-
----
-
-## 🎨 Generate Publication Figures
-
-```bash
-python fig_paper_IFAC.py \
-    --model your_model_run_name \
-    --model-type dual-hybrid-fused \
-    --index 0 \
-    --min-occluded-pixels 100
-```
-
-Generates 6 figures with different visualizations (RGB + masks, predictions, GT comparisons).
-
----
-
 ## 📦 Model Files
 
 ### Core Architecture
@@ -200,15 +166,9 @@ Generates 6 figures with different visualizations (RGB + masks, predictions, GT 
 - `test_single_sample_fullres_aligned.py` - Single sample visualization
 - `evaluation_metrics.py` - Comprehensive metrics computation
 
-### Utilities
-- `fig_paper_IFAC.py` - Publication figure generation
-- `compare_two_models.py` - Model comparison tool
-
----
-
 ## 🛠️ Configuration
 
-Edit `config_github.yaml` to customize:
+Edit `config_dual_head_hybrid_fused.yaml` to customize:
 - Dataset selection (`vitasim`, `cocoa`, `kins`, `all`)
 - Model architecture (embed_dim, depth, num_heads)
 - Training hyperparameters (lr, batch_size, epochs)
@@ -219,7 +179,7 @@ Edit `config_github.yaml` to customize:
 
 ## 📈 Training Tips
 
-1. **Occluded Weight**: Start with 0.25, increase to 0.50 if occluded IoU is low
+1. **Occluded Weight**: Set to 0.25, increase to 0.50 if occluded IoU is low
 2. **Learning Rate**: 5e-6 works well for ViT-Base with MAE pretraining
 3. **Batch Size**: 8 recommended (adjust based on GPU memory)
 4. **Warmup**: 1000 iterations for stable training
