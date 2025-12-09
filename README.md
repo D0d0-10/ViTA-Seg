@@ -50,7 +50,7 @@ Occluded Mask       Amodal Mask (Fused)
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/vita-seg-hybrid-fused.git
+git clone https://github.com/D0d0-10/vita-seg-hybrid-fused.git
 cd vita-seg-hybrid-fused
 
 # Create conda environment
