@@ -97,7 +97,7 @@ data/
     └── update_test_2020.json
 ```
 
-Update dataset paths in `config_github.yaml` if needed.
+Update dataset paths in `config_dual_head_hybrid_fused.yaml` if needed.
 
 ---
 
@@ -106,14 +106,14 @@ Update dataset paths in `config_github.yaml` if needed.
 ### Basic Training
 
 ```bash
-python training_dual_head_hybrid_fused.py --config config_github.yaml
+python training_dual_head_hybrid_fused.py --config config_dual_head_hybrid_fused.yaml
 ```
 
 ### Training with Custom Occluded Weight
 
 ```bash
 python training_dual_head_hybrid_fused.py \
-    --config config_github.yaml \
+    --config config_dual_head_hybrid_fused.yaml \
     --occluded-weight 0.50
 ```
 
@@ -121,7 +121,7 @@ python training_dual_head_hybrid_fused.py \
 
 ```bash
 python training_dual_head_hybrid_fused.py \
-    --config config_github.yaml \
+    --config config_dual_head_hybrid_fused.yaml \
     --resume path/to/checkpoint.pth
 ```
 
