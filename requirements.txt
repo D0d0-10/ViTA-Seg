@@ -1,0 +1,59 @@
+# Core Deep Learning# Core dependencies
+
+torch==2.3.0torch>=1.9.0
+
+torchvision==0.18.0torchvision>=0.10.0
+
+torchaudio==2.3.0numpy>=1.21.0
+
+timm==1.0.20pillow>=8.3.0
+
+transformers==4.57.0opencv-python>=4.5.0
+
+
+
+# Computer Vision# Optional dependencies for pretrained models
+
+opencv-python==4.8.1.78timm>=0.6.0
+
+pillow==11.3.0transformers>=4.20.0
+
+pycocotools==2.0.10
+
+# Data processing
+
+# Scientific Computingpycocotools>=2.0.0
+
+numpy==1.26.4
+
+scipy==1.15.3# Training and visualization
+
+pandas==2.3.3wandb>=0.12.0
+
+scikit-learn==1.7.2tqdm>=4.62.0
+
+pyyaml>=5.4.0
+
+# Visualization
+
+matplotlib==3.10.7# Development
+
+seaborn==0.13.2pytest>=6.2.0
+
+
+
+# Experiment Tracking# Comparison and analysis
+
+wandb==0.22.2pandas>=1.3.0
+
+matplotlib>=3.5.0
+
+# Utilitiesseaborn>=0.11.0
+
+pyyaml==6.0.3scikit-learn>=1.0.0
+tqdm==4.67.1
+requests==2.32.5
+huggingface-hub==0.35.3
+
+# Development
+pytest==8.4.2
