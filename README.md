@@ -6,6 +6,24 @@
 
 Official PyTorch implementation of the **ViTA-Seg architecture** for amodal segmentation.
 
+<p align="center">
+  <img src="images/architecture.png" alt="Architecture Diagram" width="800"/>
+  <br>
+  <em>Figure 1: Hybrid+Fused Dual-Head ViTA-Seg Architecture</em>
+</p>
+
+<p align="center">
+  <img src="images/ViTA-SimData.png" alt="ViTA-SimData Dataset" width="800"/>
+  <br>
+  <em>Figure 2: ViTA-SimData Dataset Examples</em>
+</p>
+
+<p align="center">
+  <img src="images/COCOA_KINS.png" alt="COCOA and KINS Datasets" width="800"/>
+  <br>
+  <em>Figure 3: COCOA and KINS Dataset Examples</em>
+</p>
+
 ---
 
 ## 🚀 Key Features
