@@ -47,7 +47,7 @@ Performance comparison of ViTA-Seg and C2F-Seg models on the validation datasets
     <th colspan="3">KINS</th>
     <th colspan="3">COCOA</th>
     <th colspan="3">ViTA-SimData</th>
-    <th rowspan="2">Inference Time</th>
+    <th rowspan="2">t<sub>inf</sub></th>
   </tr>
   <tr>
     <th>mIoU<sub>A</sub></th>
@@ -108,7 +108,7 @@ Performance comparison of ViTA-Seg and C2F-Seg models on the validation datasets
 - mIoU<sub>A</sub>: Mean IoU for Amodal masks
 - mIoU<sub>V</sub>: Mean IoU for Visible masks
 - mIoU<sub>O</sub>: Mean IoU for Occluded regions
-- t<sub>inf</sub>: Inference time per image (ms)
+- t<sub>inf</sub>: Inference time per instance (ms)
 
 **Key Results:**
 - ✅ ViTA-Seg Dual-Head achieves **best overall performance** across all datasets
