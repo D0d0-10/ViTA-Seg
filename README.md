@@ -244,18 +244,8 @@ Edit `config_dual_head_hybrid_fused.yaml` to customize:
 - Dataset selection (`vitasim`, `cocoa`, `kins`, `all`)
 - Model architecture (embed_dim, depth, num_heads)
 - Training hyperparameters (lr, batch_size, epochs)
-- Loss weights (amodal, occluded, dice, bce)
+- Loss weights (amodal, occluded, bce)
 - WandB project settings
-
----
-
-## 📈 Training Tips
-
-1. **Occluded Weight**: Set to 0.25, increase to 0.50 if occluded IoU is low
-2. **Learning Rate**: 5e-6 works well for ViT-Base with MAE pretraining
-3. **Batch Size**: 8 recommended (adjust based on GPU memory)
-4. **Warmup**: 1000 iterations for stable training
-5. **Gradient Accumulation**: Use 2 steps for effective batch size of 16
 
 ---
 
@@ -269,7 +259,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - Vision Transformer implementation from [timm](https://github.com/huggingface/pytorch-image-models)
 - Amodal segmentation benchmarks: [COCOA](https://arxiv.org/abs/1509.01329), [KINS](https://arxiv.org/abs/1811.11397)
-- Inspired by [C2F-Seg](https://github.com/yihui-he/C2F-Seg)
+- Inspired by [C2F-Seg](https://github.com/amazon-science/c2f-seg?tab=readme-ov-file)
 
 ---
 
