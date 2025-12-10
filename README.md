@@ -1,10 +1,10 @@
-# ViTA-Seg: Hybrid+Fused Dual-Head Vision Transformer for Amodal Segmentation
+# ViTA-Seg: Vision Transformer for Amodal Segmentation in Robotics
 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch 2.0+](https://img.shields.io/badge/pytorch-2.0+-red.svg)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Official PyTorch implementation of the **Hybrid+Fused Dual-Head architecture** for amodal instance segmentation.
+Official PyTorch implementation of the **ViTA-Seg architecture** for amodal segmentation.
 
 ---
 
@@ -27,12 +27,12 @@ ViT Encoder (Pretrained)
     ↓
 Shared Early Decoder (768→512→256)
     ↓
-    ├──────────────────────┬──────────────────────┐
-    ↓                      ↓                      ↓
+    ├──────────────────────┬
+    ↓                      ↓                      
 Occluded Late          Amodal Late            
 Decoder (256→64)       Decoder (256→64)       
     ↓                      ↓                      
-    ├──────────→ FUSION ←──────────┘
+    ├──────────────────→ FUSION
     ↓                      ↓
 Occluded Mask       Amodal Mask (Fused)
 ```
@@ -50,7 +50,7 @@ Occluded Mask       Amodal Mask (Fused)
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/vita-seg-hybrid-fused.git
+git clone https://github.com/D0d0-10/vita-seg-hybrid-fused.git
 cd vita-seg-hybrid-fused
 
 # Create conda environment
@@ -97,7 +97,7 @@ data/
     └── update_test_2020.json
 ```
 
-Update dataset paths in `config_github.yaml` if needed.
+Update dataset paths in `config_dual_head_hybrid_fused.yaml` if needed.
 
 ---
 
@@ -106,14 +106,14 @@ Update dataset paths in `config_github.yaml` if needed.
 ### Basic Training
 
 ```bash
-python training_dual_head_hybrid_fused.py --config config_github.yaml
+python training_dual_head_hybrid_fused.py --config config_dual_head_hybrid_fused.yaml
 ```
 
 ### Training with Custom Occluded Weight
 
 ```bash
 python training_dual_head_hybrid_fused.py \
-    --config config_github.yaml \
+    --config config_dual_head_hybrid_fused.yaml \
     --occluded-weight 0.50
 ```
 
@@ -121,7 +121,7 @@ python training_dual_head_hybrid_fused.py \
 
 ```bash
 python training_dual_head_hybrid_fused.py \
-    --config config_github.yaml \
+    --config config_dual_head_hybrid_fused.yaml \
     --resume path/to/checkpoint.pth
 ```
 
@@ -153,40 +153,6 @@ python test_single_sample_fullres_aligned.py \
     --index 0
 ```
 
-### Compare Two Models
-
-```bash
-python compare_two_models.py \
-    --model1 model_1 \
-    --model2 model_2 \
-    --diff-threshold 0.05
-```
-
-Or with difference range:
-
-```bash
-python compare_two_models.py \
-    --model1 model_1 \
-    --model2 model_2 \
-    --diff-range 0.02 0.05
-```
-
----
-
-## 🎨 Generate Publication Figures
-
-```bash
-python fig_paper_IFAC.py \
-    --model your_model_run_name \
-    --model-type dual-hybrid-fused \
-    --index 0 \
-    --min-occluded-pixels 100
-```
-
-Generates 6 figures with different visualizations (RGB + masks, predictions, GT comparisons).
-
----
-
 ## 📦 Model Files
 
 ### Core Architecture
@@ -200,15 +166,9 @@ Generates 6 figures with different visualizations (RGB + masks, predictions, GT 
 - `test_single_sample_fullres_aligned.py` - Single sample visualization
 - `evaluation_metrics.py` - Comprehensive metrics computation
 
-### Utilities
-- `fig_paper_IFAC.py` - Publication figure generation
-- `compare_two_models.py` - Model comparison tool
-
----
-
 ## 🛠️ Configuration
 
-Edit `config_github.yaml` to customize:
+Edit `config_dual_head_hybrid_fused.yaml` to customize:
 - Dataset selection (`vitasim`, `cocoa`, `kins`, `all`)
 - Model architecture (embed_dim, depth, num_heads)
 - Training hyperparameters (lr, batch_size, epochs)
@@ -219,7 +179,7 @@ Edit `config_github.yaml` to customize:
 
 ## 📈 Training Tips
 
-1. **Occluded Weight**: Start with 0.25, increase to 0.50 if occluded IoU is low
+1. **Occluded Weight**: Set to 0.25, increase to 0.50 if occluded IoU is low
 2. **Learning Rate**: 5e-6 works well for ViT-Base with MAE pretraining
 3. **Batch Size**: 8 recommended (adjust based on GPU memory)
 4. **Warmup**: 1000 iterations for stable training
