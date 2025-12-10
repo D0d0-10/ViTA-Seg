@@ -156,9 +156,7 @@ data/
 │   ├── train2014/
 │   ├── val2014/
 │   ├── ViTASim_amodal_train2014_with_classes.json
-│   ├── ViTASim_amodal_val2014_with_classes.json
-│   ├── fusion_train.pkl
-│   └── fusion_test.pkl
+│   └── ViTASim_amodal_val2014_with_classes.json
 ├── COCOA/
 │   ├── train2014/
 │   ├── val2014/
