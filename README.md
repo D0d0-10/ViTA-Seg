@@ -9,19 +9,19 @@ Official PyTorch implementation of the **ViTA-Seg architecture** for amodal segm
 <p align="center">
   <img src="images/architecture.png" alt="Architecture Diagram" width="800"/>
   <br>
-  <em>Figure 1: Hybrid+Fused Dual-Head ViTA-Seg Architecture</em>
+  <em>Figure 1: The proposed ViTA-Seg Dual Head architectures.</em>
 </p>
 
 <p align="center">
   <img src="images/ViTA-SimData.png" alt="ViTA-SimData Dataset" width="800"/>
   <br>
-  <em>Figure 2: ViTA-SimData Dataset Examples</em>
+  <em>Figure 2: The qualitative results estimated by C2F-Seg, ViTA-Seg Single Head and Dual Head on ViTA-SimData.</em>
 </p>
 
 <p align="center">
   <img src="images/COCOA_KINS.png" alt="COCOA and KINS Datasets" width="800"/>
   <br>
-  <em>Figure 3: COCOA and KINS Dataset Examples</em>
+  <em>Figure 3: The qualitative results estimated by C2F-Seg, ViTA-Seg Single Head and Dual Head on COCOA and KINS.</em>
 </p>
 
 ---
@@ -59,6 +59,31 @@ Occluded Mask       Amodal Mask (Fused)
 1. **Task-Specific Branches**: Specialized learning paths for amodal and occluded predictions
 2. **Cross-Task Fusion**: Occluded features enhance amodal prediction
 3. **Best of Both Worlds**: Combines specialization with collaboration
+
+---
+
+## 📊 Performance
+
+Performance comparison of ViTA-Seg and C2F-Seg models on the validation datasets:
+
+| Model | KINS | | | COCOA | | | ViTA-SimData | | | Inference Time |
+|:------|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+| | mIoU<sub>A</sub> | mIoU<sub>V</sub> | mIoU<sub>O</sub> | mIoU<sub>A</sub> | mIoU<sub>V</sub> | mIoU<sub>O</sub> | mIoU<sub>A</sub> | mIoU<sub>V</sub> | mIoU<sub>O</sub> | t<sub>inf</sub> (ms) |
+| C2F-Seg | 87.89 | 72.12 | 57.30 | 87.15 | 92.52 | 36.69 | 85.17 | 90.67 | 53.28 | 113.77 |
+| ViTA-Seg Single-Head | 89.94 | **98.84** | 60.05 | 91.57 | **99.63** | 27.65 | 88.31 | 91.01 | 49.33 | **8.54** |
+| ViTA-Seg Dual-Head | **91.12** | 98.65 | **63.48** | **93.70** | 99.38 | **49.88** | **91.09** | **91.48** | **58.65** | 8.96 |
+
+**Metrics:**
+- mIoU<sub>A</sub>: Mean IoU for Amodal masks
+- mIoU<sub>V</sub>: Mean IoU for Visible masks
+- mIoU<sub>O</sub>: Mean IoU for Occluded regions
+- t<sub>inf</sub>: Inference time per image (ms)
+
+**Key Results:**
+- ✅ ViTA-Seg Dual-Head achieves **best overall performance** across all datasets
+- ✅ **13x faster** inference than C2F-Seg (8.96ms vs 113.77ms)
+- ✅ Superior amodal and occluded segmentation on COCOA and KINS
+- ✅ Single-Head variant optimal for visible mask prediction
 
 ---
 
