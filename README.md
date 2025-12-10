@@ -36,42 +36,73 @@ Official PyTorch implementation of the **ViTA-Seg architecture** for amodal segm
 
 ---
 
-## 🏗️ Architecture
-
-```
-Input (RGB + Visible Mask)
-    ↓
-ViT Encoder (Pretrained)
-    ↓
-Shared Early Decoder (768→512→256)
-    ↓
-    ├──────────────────────┬
-    ↓                      ↓                      
-Occluded Late          Amodal Late            
-Decoder (256→64)       Decoder (256→64)       
-    ↓                      ↓                      
-    ├──────────────────→ FUSION
-    ↓                      ↓
-Occluded Mask       Amodal Mask (Fused)
-```
-
-**Key Innovations:**
-1. **Task-Specific Branches**: Specialized learning paths for amodal and occluded predictions
-2. **Cross-Task Fusion**: Occluded features enhance amodal prediction
-3. **Best of Both Worlds**: Combines specialization with collaboration
-
----
-
 ## 📊 Performance
 
 Performance comparison of ViTA-Seg and C2F-Seg models on the validation datasets:
 
-| Model | KINS | | | COCOA | | | ViTA-SimData | | | Inference Time |
-|:------|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
-| | mIoU<sub>A</sub> | mIoU<sub>V</sub> | mIoU<sub>O</sub> | mIoU<sub>A</sub> | mIoU<sub>V</sub> | mIoU<sub>O</sub> | mIoU<sub>A</sub> | mIoU<sub>V</sub> | mIoU<sub>O</sub> | t<sub>inf</sub> (ms) |
-| C2F-Seg | 87.89 | 72.12 | 57.30 | 87.15 | 92.52 | 36.69 | 85.17 | 90.67 | 53.28 | 113.77 |
-| ViTA-Seg Single-Head | 89.94 | **98.84** | 60.05 | 91.57 | **99.63** | 27.65 | 88.31 | 91.01 | 49.33 | **8.54** |
-| ViTA-Seg Dual-Head | **91.12** | 98.65 | **63.48** | **93.70** | 99.38 | **49.88** | **91.09** | **91.48** | **58.65** | 8.96 |
+<table>
+<thead>
+  <tr>
+    <th rowspan="2">Model</th>
+    <th colspan="3">KINS</th>
+    <th colspan="3">COCOA</th>
+    <th colspan="3">ViTA-SimData</th>
+    <th rowspan="2">Inference Time</th>
+  </tr>
+  <tr>
+    <th>mIoU<sub>A</sub></th>
+    <th>mIoU<sub>V</sub></th>
+    <th>mIoU<sub>O</sub></th>
+    <th>mIoU<sub>A</sub></th>
+    <th>mIoU<sub>V</sub></th>
+    <th>mIoU<sub>O</sub></th>
+    <th>mIoU<sub>A</sub></th>
+    <th>mIoU<sub>V</sub></th>
+    <th>mIoU<sub>O</sub></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>C2F-Seg</td>
+    <td>87.89</td>
+    <td>72.12</td>
+    <td>57.30</td>
+    <td>87.15</td>
+    <td>92.52</td>
+    <td>36.69</td>
+    <td>85.17</td>
+    <td>90.67</td>
+    <td>53.28</td>
+    <td>113.77</td>
+  </tr>
+  <tr>
+    <td>ViTA-Seg Single-Head</td>
+    <td>89.94</td>
+    <td><strong>98.84</strong></td>
+    <td>60.05</td>
+    <td>91.57</td>
+    <td><strong>99.63</strong></td>
+    <td>27.65</td>
+    <td>88.31</td>
+    <td>91.01</td>
+    <td>49.33</td>
+    <td><strong>8.54</strong></td>
+  </tr>
+  <tr>
+    <td>ViTA-Seg Dual-Head</td>
+    <td><strong>91.12</strong></td>
+    <td>98.65</td>
+    <td><strong>63.48</strong></td>
+    <td><strong>93.70</strong></td>
+    <td>99.38</td>
+    <td><strong>49.88</strong></td>
+    <td><strong>91.09</strong></td>
+    <td><strong>91.48</strong></td>
+    <td><strong>58.65</strong></td>
+    <td>8.96</td>
+  </tr>
+</tbody>
+</table>
 
 **Metrics:**
 - mIoU<sub>A</sub>: Mean IoU for Amodal masks
