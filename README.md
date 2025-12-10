@@ -188,10 +188,10 @@ python training_dual_head_hybrid_fused.py --config config_dual_head_hybrid_fused
 ```bash
 python training_dual_head_hybrid_fused.py \
     --config config_dual_head_hybrid_fused.yaml \
-    --occluded-weight 0.50
+    --occluded-weight 0.25
 ```
 
-### Resume Training
+### Resume Training \ Fine-Tuning on Your Own Dataset
 
 ```bash
 python training_dual_head_hybrid_fused.py \
@@ -236,8 +236,8 @@ python test_single_sample_fullres_aligned.py \
 
 ### Training & Evaluation
 - `training_dual_head_hybrid_fused.py` - Training script with WandB integration
-- `test_cocoa_fullres_aligned.py` - Full resolution evaluation
-- `test_single_sample_fullres_aligned.py` - Single sample visualization
+- `test_cocoa_fullres_aligned.py` - Test evaluation script on the benchmarks
+- `test_single_sample_fullres_aligned.py` - Single sample visualization, selecting an index (--index) or image ID (image_id)
 - `evaluation_metrics.py` - Comprehensive metrics computation
 
 ## 🛠️ Configuration
