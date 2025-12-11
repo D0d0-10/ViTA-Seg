@@ -274,10 +274,13 @@ For questions or issues, please open an issue on GitHub.
 If you use this code in your research, please cite:
 
 ```bibtex
-@article{yourname2025vitaseg,
-  title={ViTA-Seg: Hybrid+Fused Dual-Head Vision Transformer for Amodal Instance Segmentation},
-  author={Your Name},
-  journal={Your Conference/Journal},
-  year={2025}
+@article{caramia2025vitasegvisiontransformeramodal,
+      title={ViTA-Seg: Vision Transformer for Amodal Segmentation in Robotics}, 
+      author={Donato Caramia and Florian T. Pokorny and Giuseppe Triggiani and Denis Ruffino and David Naso and Paolo Roberto Massenio},
+      year={2025},
+      eprint={2512.09510},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2512.09510}, 
 }
 ```
