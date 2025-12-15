@@ -4,7 +4,7 @@
 [![PyTorch 2.0+](https://img.shields.io/badge/pytorch-2.0+-red.svg)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Official PyTorch implementation of the **ViTA-Seg architecture** for amodal segmentation.
+Official PyTorch implementation of the [paper] (https://arxiv.org/pdf/2512.09510) called **ViTA-Seg: Vision Transformer for Amodal Segmentation in Robotics**.
 
 <p align="center">
   <img src="images/architecture.png" alt="Architecture Diagram" width="800"/>
