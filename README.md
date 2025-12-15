@@ -43,63 +43,63 @@ Performance comparison of ViTA-Seg and C2F-Seg models on the validation datasets
 <table>
 <thead>
   <tr>
-    <th rowspan="2">Model</th>
-    <th colspan="3">KINS</th>
-    <th colspan="3">COCOA</th>
-    <th colspan="3">ViTA-SimData</th>
-    <th rowspan="2">t<sub>inf</sub></th>
+    <th rowspan="2" align="center">Model</th>
+    <th colspan="3" align="center">KINS</th>
+    <th colspan="3" align="center">COCOA</th>
+    <th colspan="3" align="center">ViTA-SimData</th>
+    <th rowspan="2" align="center">t<sub>inf</sub></th>
   </tr>
   <tr>
-    <th>mIoU<sub>A</sub></th>
-    <th>mIoU<sub>V</sub></th>
-    <th>mIoU<sub>O</sub></th>
-    <th>mIoU<sub>A</sub></th>
-    <th>mIoU<sub>V</sub></th>
-    <th>mIoU<sub>O</sub></th>
-    <th>mIoU<sub>A</sub></th>
-    <th>mIoU<sub>V</sub></th>
-    <th>mIoU<sub>O</sub></th>
+    <th align="center">mIoU<sub>A</sub></th>
+    <th align="center">mIoU<sub>V</sub></th>
+    <th align="center">mIoU<sub>O</sub></th>
+    <th align="center">mIoU<sub>A</sub></th>
+    <th align="center">mIoU<sub>V</sub></th>
+    <th align="center">mIoU<sub>O</sub></th>
+    <th align="center">mIoU<sub>A</sub></th>
+    <th align="center">mIoU<sub>V</sub></th>
+    <th align="center">mIoU<sub>O</sub></th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td>C2F-Seg</td>
-    <td>87.89</td>
-    <td>72.12</td>
-    <td>57.30</td>
-    <td>87.15</td>
-    <td>92.52</td>
-    <td>36.69</td>
-    <td>85.17</td>
-    <td>90.67</td>
-    <td>53.28</td>
-    <td>113.77</td>
+    <td align="center">C2F-Seg</td>
+    <td align="center">87.89</td>
+    <td align="center">72.12</td>
+    <td align="center">57.30</td>
+    <td align="center">87.15</td>
+    <td align="center">92.52</td>
+    <td align="center">36.69</td>
+    <td align="center">85.17</td>
+    <td align="center">90.67</td>
+    <td align="center">53.28</td>
+    <td align="center">113.77</td>
   </tr>
   <tr>
-    <td>ViTA-Seg Single-Head</td>
-    <td>89.94</td>
-    <td><strong>98.84</strong></td>
-    <td>60.05</td>
-    <td>91.57</td>
-    <td><strong>99.63</strong></td>
-    <td>27.65</td>
-    <td>88.31</td>
-    <td>91.01</td>
-    <td>49.33</td>
-    <td><strong>8.54</strong></td>
+    <td align="center">ViTA-Seg Single-Head</td>
+    <td align="center">89.94</td>
+    <td align="center"><strong>98.84</strong></td>
+    <td align="center">60.05</td>
+    <td align="center">91.57</td>
+    <td align="center"><strong>99.63</strong></td>
+    <td align="center">27.65</td>
+    <td align="center">88.31</td>
+    <td align="center">91.01</td>
+    <td align="center">49.33</td>
+    <td align="center"><strong>8.54</strong></td>
   </tr>
   <tr>
-    <td>ViTA-Seg Dual-Head</td>
-    <td><strong>91.12</strong></td>
-    <td>98.65</td>
-    <td><strong>63.48</strong></td>
-    <td><strong>93.70</strong></td>
-    <td>99.38</td>
-    <td><strong>49.88</strong></td>
-    <td><strong>91.09</strong></td>
-    <td><strong>91.48</strong></td>
-    <td><strong>58.65</strong></td>
-    <td>8.96</td>
+    <td align="center">ViTA-Seg Dual-Head</td>
+    <td align="center"><strong>91.12</strong></td>
+    <td align="center">98.65</td>
+    <td align="center"><strong>63.48</strong></td>
+    <td align="center"><strong>93.70</strong></td>
+    <td align="center">99.38</td>
+    <td align="center"><strong>49.88</strong></td>
+    <td align="center"><strong>91.09</strong></td>
+    <td align="center"><strong>91.48</strong></td>
+    <td align="center"><strong>58.65</strong></td>
+    <td align="center">8.96</td>
   </tr>
 </tbody>
 </table>
